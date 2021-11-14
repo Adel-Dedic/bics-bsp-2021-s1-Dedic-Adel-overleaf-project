@@ -383,13 +383,17 @@ Provide a synthetic and abstract description of the technical deliverables that 
 % As a consequence the work done to satisfy the constraints cannot be presented as a deliverable of the BSP.
 
 \section{Pre-requisites ($[5\%..10\%]$ of total words)} 
-Describe in these sections the main scientific and technical knowledge that is required to be known by you before starting the project.
+(Describe in these sections the main scientific and technical knowledge that is required to be known by you before starting the project.
 Do not describe in details this knowledge but only abstractly. All the content of this section shall not be used, even partially, in the deliverable sections.
-It is important not to include in this section all the knowledge you have been obliged to acquire in order to produce the deliverable. It should only state the knowledge the student possessed before starting the project and that was mandatory to possess to be capable to produce the deliverables. It explicitly defines  the technical and scientific pre-condition for the project. It is also useful to avoid project failures due to over or under complex subjects.
-
+It is important not to include in this section all the knowledge you have been obliged to acquire in order to produce the deliverable. It should only state the knowledge the student possessed before starting the project and that was mandatory to possess to be capable to produce the deliverables. It explicitly defines  the technical and scientific pre-condition for the project. It is also useful to avoid project failures due to over or under complex subjects.)\\
 
 \subsection{Scientific pre-requisites}
+Some statistics and comparison of probabilities and mathematics is generally used in the
+scientific report which requires some mathematical background to fully comprehend.
 \subsection{Technical pre-requisites}
+The technical part of the BSP is coded in Python, thereby knowledge about coding in Python is recommended.\\
+This applies to any general programming knowledge as well not necessarily Python only.\\
+Taken in consideration that not all programming languages share same structure or functions.\\
 
 
 \section{ A Scientific Deliverable 1}
@@ -405,15 +409,47 @@ Provide descriptions of the deliverables concrete production. It must present pa
 Provide any objective elements to assess that your deliverables do or do not satisfy the requirements described above. 
 
 \section{ A Technical Deliverable 1}
-For each technical deliverable targeted in section~\ref{sec-deliverables} provide a full section with all the subsections described below.
-The cumulative volume of all deliverable sections represents 75\% of the paper's volume in words. Volumes below are indicated relative the the section.
 \label{sec-production}
 \subsection{Requirements ($\pm$ 15\% of section's words)}
-cf. section~\ref{sec-production} applied to the technical deliverable
+The program shall behave like the original Enigma Machine did, this includes being able to encrypt and to decrypt messages with the same 'key' provided previously.\\
+Another key features from the original that is included are fully functional rotors with which the user is able to configure manually (not random)\\
+Furthermore, one main difference compared to its predecessors is the inclusion of encryption/decryption of a whole string of text instead of a key-by-key method\\
+Finally, an option to export and import a text file which possesses the key information to ease the usability of the program.
 \subsection{Design ($\pm$ 30\% of section's words)}
-cf. section~\ref{sec-production} applied to the technical deliverable
+The program is easily readable from the surface as soon as the user is introduced to it; on the top the 'rotor section' is located where the user is supposed to insert his/her set of rotor settings. To confirm the rotors, the user shall press the 'Set' button to finalize the process.\\
+
+Furthermore, the section right below the rotors is where the 'input section' is located. This is where the user is supposed to insert a string of text, that being a simple phrase or a whole paragraph of text, which he/she is wishing to process.\\
+
+Moreover, the similar section right after is where the 'output section' is located. This section is nothing to be mangled with as it only provides an output through the functions of buttons and doesn't provide anything except that.\\
+
+Finally the given buttons at the end are self-explanatory by their name. i.e.: 'Encrypt', 'Decrypt', 'Export*' and 'Import*'\\
+A notice is provided to explain that the 'Export*' and 'Import*' buttons function in aid of a text file specifically named 'key.txt' file.\\
+
+The 'key.txt' file created upon 'Export' is easily readable by a human but the content cannot be fully understood without the program to decrypt the processed message.\\ 
+
 \subsection{Production ($\pm$ 40\% of section's words)}
 cf. section~\ref{sec-production} applied to the technical deliverable
+Since the intention of the program was to implement the functions of the original Enigma Machine thus it required to develop a way to transform 'mechanics' to 'code' basically.\\
+This was done through dissecting the Enigma into different parts for the program.\\
+
+These parts are formed into functions, first being the 'rotate character' whose job is to permute a character by a step where the step in this case is a permutation of the rotors.\\
+
+The permutation is a process of 3 different mathematical operations:\\
+\begin{itemize}
+    \item Firstly adding the rotor 1 to the step;\\
+    \item Secondly subtracting the rotor 2 from the step;\\
+    \item Finally, adding the double of the rotor 3 to the step.\\
+\end{itemize}
+Second part is the 'rotor change' whose objective is to increment rotors in a respectful order and make sure that the rotors stay between their boundaries (1-26).\\
+Once the first rotor completes a whole turn the second rotor increments by 1 and so on.\\
+
+Third part which in this case is two different functions, those being 'encrypt' and 'decrypt'. The prior being the main function whose objective is to rotate (encrypt) each character while also initiating the 'rotor change' each time. This provides a step for the 'rotate character' which is dynamic in this case.\\
+
+Last part of the program is the functionality of import/export, whose job is create, respectfully read, a text file named 'key.txt'.\\
+
+The intention is to provide usability to the user whilst operating with the program, thereby the change to the interface compared to the original was quite needed to fulfill the intention.\\
+This version provides the user to process a whole string of a text instead of the 'key-by-key' method, due to the reason where latter provided a slow process to read longer texts.\\
+
 \subsection{Assessment ($\pm$ 15\% of section's words)}
 cf. section~\ref{sec-production} applied to the technical deliverable
 
