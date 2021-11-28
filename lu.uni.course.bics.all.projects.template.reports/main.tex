@@ -1,5 +1,7 @@
 \documentclass[conference,compsoc]{IEEEtran}
- 
+\usepackage{graphicx}
+\usepackage[table]{xcolor}
+
 \usepackage{datetime}
 
 % *** CITATION PACKAGES ***
@@ -382,14 +384,11 @@ Provide a synthetic and abstract description of the technical deliverables that 
 % An example could be ``good level in Python programming''. 
 % As a consequence the work done to satisfy the constraints cannot be presented as a deliverable of the BSP.
 
-\section{Pre-requisites ($[5\%..10\%]$ of total words)} 
-(Describe in these sections the main scientific and technical knowledge that is required to be known by you before starting the project.
-Do not describe in details this knowledge but only abstractly. All the content of this section shall not be used, even partially, in the deliverable sections.
-It is important not to include in this section all the knowledge you have been obliged to acquire in order to produce the deliverable. It should only state the knowledge the student possessed before starting the project and that was mandatory to possess to be capable to produce the deliverables. It explicitly defines  the technical and scientific pre-condition for the project. It is also useful to avoid project failures due to over or under complex subjects.)\\
+\section{Pre-requisites}
 
 \subsection{Scientific pre-requisites}
-Some statistics and comparison of probabilities and mathematics is generally used in the
-scientific report which requires some mathematical background to fully comprehend.
+To successfully understand the scientific report, no actual pre-requisite was necessary.
+But something that was useful to comprehend is simple knowledge of comparison.
 \subsection{Technical pre-requisites}
 The technical part of the BSP is coded in Python, thereby knowledge about coding in Python is recommended.\\
 This applies to any general programming knowledge as well not necessarily Python only.\\
@@ -397,40 +396,121 @@ Taken in consideration that not all programming languages share same structure o
 
 
 \section{ A Scientific Deliverable 1}
-For each scientific deliverable targeted in section~\ref{sec-deliverables} provide a full section with all the subsections described below.
 \label{sec-production}
-\subsection{Requirements ($\pm$ 15\% of section's words)}
-Describe here all the properties that characterize the deliverables you produced. It should describe, for each main deliverable, what are the expected functional and non functional properties of the deliverables, who are the actors exploiting the deliverables. It is expected that you have at least one scientific deliverable (e.g. ``Scientific presentation of the Python programming language'', ``State of the art on quality models for human computer interaction'', \ldots.) and one technical deliverable (e.g. ``BSProSoft - A python/django web-site for IT job offers retrieval and analysis'', \ldots). 
-\subsection{Design ($\pm$ 30\% of section's words)}
-Provide the necessary and most useful explanations on how those deliverables have been produced.
-\subsection{Production ($\pm$ 40\% of section's words)}
-Provide descriptions of the deliverables concrete production. It must present part of the deliverable (e.g. source code extracts, scientific work extracts, \ldots) to illustrate and explain its actual production.
+\subsection{Requirements}
+The purpose of the deliverable is to research and formalize an answer to the following question:
+\emph{How secure is Enigma ?}
+Therefore, the points that will be covered are:
+\begin{itemize}
+    \item{[5.3.1.]} Brief description of Enigma
+    \item{[5.3.2.]} Definition of encryption and how it works in the case of Enigma
+    \item{[5.3.3.]} Breaking Point N°1: "Key Exchange"
+    \item{[5.3.4.]} Breaking Point N°2: "Letters cannot encoded into themselves"
+\end{itemize}
+
+\subsection{Design}
+The scientific deliverable is going to start off with a brief description of what Enigma is and introduce encryption which will also be further explained in the next point. With that out of the way, the main part of the report is coming up and explain the flaws of Enigma.\\
+
+The first flaw "Key exchange" was of a lesser problem back in the day but to today's standards is as important as the cipher itself. Thereby some examples of today's implementation for key exchange is presented.\\
+
+The second flaw, was more focused on the functionality of how encryption behaves concerning Enigma and explain how this affects the security thereby how it could be used to break it.
+
+\subsection{Production}
+
+\subsubsection{Enigma} Enigma is an encryption device which was mostly used by the Germans during the WWII, it was capable of configuring trillions of combinations and thereby rendering the cipher \underline{almost} impossible to crack and such it was preferred way for German army to communicate.\\
+The way it worked it was by permuting each letter into another one with the help of rotors and other components like the plugboard and the reflector. In this case, the rotors act like a step for the letter to move and the rotors change dynamically each time a letter is pressed.
+
+\subsubsection{Encryption} Encryption is another means of securing information with a help of mathematical techniques and algorithms. Usually a key is provided which is used to access the information back. The encryption process offers information unreadable to anybody without the proper key. This technique of securing information is advantageous fighting off hackers who are willing to access sensitive information.
+
+\subsubsection{Key Exchange} Each encryption method is conventionally accompanied by a key that is used to process the information encrypted readable again. And thus, for an encryption method to be reliable security of the key plays a big role. At the beginning, people relied on confidentiality of securing the key and utilized a single key thereby the method was called 'single-key' cryptography.\\
+'Single-Key' cryptography in fact provided insecurities on the level where if the two parties failed exchanging properly the key it increased the chance for a third party to gain acquisition of the key.\\
+Thereby, another methods have been introduced, specifically a two-key system which was the famous 'public-key' cryptography.\\
+It was accompanied with a private and a public key, based on what encryption algorithms was used the uses of these keys depended on it. i.e.: 'Rivest-Shamir-Adleman' (RSA) used the private key for decryption of information where as 'Digital Signature Algorithm' (DSA) used it for authentication purposes.\\
+Another method of securely exchanging keys is the famous 'Diffie-Hellman' (DH) method, even though this method was one of the earliest to come to light it's still broadly used on multiple platforms. The method consists of generating am unique public and an unique private key for both parties resulting a combination of one's private key and other's public key gives out the secret information.\\
+Enigma on the other hand didn't follow any of these 'modern' methods of key exchange and would simply share list of day-to-day configurations of the Enigma to trusted parties which would for a month. To today's standards, this in fact is very dangerous way of distributing information because if it would land on the wrong hands the leak of information wouldn't be resolved soon enough to prevent drawbacks. (In the case of Enigma, war obstructions)\\ 
+Nonetheless, in this case a simple solution is to modernize the key distribution by using more modern methods like stated above (i.e.:  RSA, DSA, DH, \ldots)
+
+\subsubsection{Letters cannot be encoded into themselves}
+During the WWII, many of the parties that were trying to break Enigma have noticed a simple but very big flaw in the encryption technique of the machine. Which was too difficult to fix provided by the techniques that existed at the time. The flaw was lying much deeper under the surface and involved many interactions between other components to resolve.
+Thereby, another breaking point of Enigma was the fact that a letter cannot represent itself during encryption based on the functionality and how Enigma works.\\
+Which means, when the user would press the letter "A", the output would \underline{never} be encoded as the letter "A".\\
+When a letter is pressed on the machine, an electrical flow is created which passes through numerous components that help permute the letter, in this case rotors and the reflector.
+The electrical flow follows an unique 'pathway' from the pressed letter and lightened up letter. The path never intersects thus the electrical flow can never arrive to the same position where it departed from.\\
+This information was a great deal for mathematicians and code-breakers at the time, because it gave them a hint and something to work on because previously they've been working blindly on how to break the Enigma.\\
+At this point, since they knew about the flaw they were missing only one element to pursue and that was to guess a word which would always be included into the enciphered messages. In this case, they found out that a weather report and the phrase "Heil Hitler" was always included, where the latter was at the end of a letter and former at the beginning.\\
+With these two elements, mathematicians used a specific method to break the code; the method was 'process of elimination'. They would compare words to the letters of the code and in the case where a single letter from word was also in the code, then they were assured that the word is not part of the code based on the fact that a letter cannot be itself.\\
+
+Provided example, let's suppose we're comparing the word "windy" to the code (The symbol \# is to indicate the unknown letters):\\
+
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+ \hline
+ Coded Message & \cellcolor{red!35}W & S & I & T & V & N & A \\ 
+ \hline
+ Word & \cellcolor{red!35}W & \cellcolor{green!35}I & \cellcolor{green!35}N & \cellcolor{green!35}D & \cellcolor{green!35}Y & \# & \# \\
+ \hline
+\end{tabular}\\
+
+Since the letter 'W' are matching up, means that this doesn't hold up.\\
+
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+ \hline
+ Coded Message & W & S & \cellcolor{red!35}I & T & V & N & A \\ 
+ \hline
+ Word & \# & \cellcolor{green!35}W & \cellcolor{red!35}I & \cellcolor{green!35}N & \cellcolor{green!35}D & \cellcolor{green!35}Y & \# \\
+ \hline
+\end{tabular}\\
+
+In this case the letter 'I' is matching, thereby also not the right encoding.\\
+
+\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+ \hline
+ Coded Message & W & S & I & T & V & N & A \\ 
+ \hline
+ Word & \# & \# & \cellcolor{green!35}W & \cellcolor{green!35}I & \cellcolor{green!35}N & \cellcolor{green!35}D & \cellcolor{green!35}Y \\
+ \hline
+\end{tabular}\\
+
+Finally where none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages.\\
+
+
 \subsection{Assessment ($\pm$ 15\% of section's words)}
 Provide any objective elements to assess that your deliverables do or do not satisfy the requirements described above. 
 
 \section{ A Technical Deliverable 1}
 \label{sec-production}
-\subsection{Requirements ($\pm$ 15\% of section's words)}
-The program shall behave like the original Enigma Machine did, this includes being able to encrypt and to decrypt messages with the same 'key' provided previously.\\
-Another key features from the original that is included are fully functional rotors with which the user is able to configure manually (not random)\\
-Furthermore, one main difference compared to its predecessors is the inclusion of encryption/decryption of a whole string of text instead of a key-by-key method\\
-Finally, an option to export and import a text file which possesses the key information to ease the usability of the program.
+
+\subsection{Requirements}
+The program is supposed to polished and posses similarities but also improve upon if necessary of the original Enigma machine, in this case:
+\begin{itemize}
+    \item The program should include a relatable interface
+    \item Fully configurable rotor settings which would increment dynamically
+    \item Unlike the original, a text-box where the user is able to input a whole string of text and process it whole
+    \item For the ease of usability, the user should be able to easily test messages. i.e.: an function to import, export and switch output with input
+    \item And finally, the program shouldn't depend on anything external to function alike the original
+\end{itemize}
+
 \subsection{Design ($\pm$ 30\% of section's words)}
 The program is easily readable from the surface as soon as the user is introduced to it; on the top the 'rotor section' is located where the user is supposed to insert his/her set of rotor settings. To confirm the rotors, the user shall press the 'Set' button to finalize the process.\\
+This is the first thing the user should be introduced to because this the main functionality of the program and results an unique key for the processed message. The configured settings are important to remember, without them the original message cannot be retrieved easily. Thereby, when the user has set them, the rotors settings are visible to the user thanks to the message above where it clearly states the rotor settings in the form of (X/X/X) where 'X' designates the value of the rotor in the respectful order.\\
 
 Furthermore, the section right below the rotors is where the 'input section' is located. This is where the user is supposed to insert a string of text, that being a simple phrase or a whole paragraph of text, which he/she is wishing to process.\\
 
 Moreover, the similar section right after is where the 'output section' is located. This section is nothing to be mangled with as it only provides an output through the functions of buttons and doesn't provide anything except that.\\
 
-Finally the given buttons at the end are self-explanatory by their name. i.e.: 'Encrypt', 'Decrypt', 'Export*' and 'Import*'\\
+The reason for inclusion of the last two mentioned sections is to provide usability to the user, unlike the original Enigma machine the user was supposed to type each letter through key-by-key method and would result into a annoying pattern where if the user somehow messes up, he's supposed to start all over again. With the inclusion of the 'input section', the user can easily import a whole string of text and process it whole while still following the procedures of dynamic rotors in the back-end and output the whole result in the 'output section' and thereby eliminate any frustration which was known to exist with the original Enigma machine.\\
+
+Finally the given buttons at the end are self-explanatory by their name. i.e.: 'Transfer','Encrypt', 'Decrypt', 'Export*' and 'Import*'\\
 A notice is provided to explain that the 'Export*' and 'Import*' buttons function in aid of a text file specifically named 'key.txt' file.\\
+
+The practicality of these buttons extends greater than what it represents on the surface. 'Transfer' button exists due to the reasons if the user is willing to test quickly some length of strings and be provided of what the result may be.\\
+
+'Encrypt' and 'Decrypt' are designated for flexibility of the program as it adds upon options to the user, these in fact are very necessary because they include the main objectives of the program itself. Unlike the original where a mechanical 'pathway' is created each time a key is pressed, that 'pathway' doesn't exist in the case of this program due it to not being necessary to properly function and also in this case the user has options to decide how exact he/she wants it to behave like.\\
+
+The buttons 'Export*' and 'Import*' are again an addition that provide an ease of functionality where the user isn't supposed to write enciphered messages and accompanied rotor configurations manually. The buttons read/create files which include important information (rotor settings and the processed message) and implement them accordingly. In the case of 'Import*', the rotor settings is set and the message is imported into the 'input section' and enables the function to 'Decrypt' the message for the user. On the other hand, the 'Export*' saves the message and settings onto a text-file named 'key.txt'.\\
 
 The 'key.txt' file created upon 'Export' is easily readable by a human but the content cannot be fully understood without the program to decrypt the processed message.\\ 
 
 \subsection{Production ($\pm$ 40\% of section's words)}
-cf. section~\ref{sec-production} applied to the technical deliverable
-Since the intention of the program was to implement the functions of the original Enigma Machine thus it required to develop a way to transform 'mechanics' to 'code' basically.\\
-This was done through dissecting the Enigma into different parts for the program.\\
 
 These parts are formed into functions, first being the 'rotate character' whose job is to permute a character by a step where the step in this case is a permutation of the rotors.\\
 
