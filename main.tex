@@ -301,30 +301,6 @@ A tutor (or any person having contributed to the BSP work) is not a co-author pe
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-\section{Plagiarism statement}
-{\it This 350 words section without this first paragraph must be included in the submitted report and placed after the conclusion. This section is not counting in the total words quantity.}\\
-
-\newline
-I declare that I am aware of the following facts:
-\begin{itemize}
-	\item As a student at the University of Luxembourg I must respect the rules of intellectual honesty, in particular not to resort to plagiarism, fraud or any other method that is illegal or contrary to scientific integrity.
-	\item My report will be checked for plagiarism and if the plagiarism check is positive, an internal procedure will be started by my tutor. I am advised to request a pre-check by my tutor to avoid any issue.
-	\item As declared in the assessment procedure of the University of Luxembourg, plagiarism is committed whenever the source of information used in an assignment, research report, paper or otherwise published/circulated piece of work is not properly acknowledged. In other words, plagiarism is the passing off as one’s own the words, ideas or work of another person, without attribution to the author. The omission of such proper acknowledgement amounts to claiming authorship for the work of another person. Plagiarism is committed regardless of the language of the original work used. Plagiarism can be deliberate or accidental.
-Instances of plagiarism include, but are not limited to:
-\begin{enumerate}
-  \item Not putting quotation marks around a quote from another person’s work
-  \item Pretending to paraphrase while in fact quoting
-  \item Citing incorrectly or incompletely
-  \item Failing to cite the source of a quoted or paraphrased work
-  \item Copying/reproducing sections of another person’s work without acknowledging the source
-  \item Paraphrasing another person’s work without acknowledging the source
-  \item Having another person write/author a work for oneself and submitting/publishing it (with permission, with or without compensation) in one’s own name (‘ghost-writing’)
-  \item Using another person’s unpublished work without attribution and permission (‘stealing’)
-  \item Presenting a piece of work as one’s own that contains a high proportion of quoted/copied or paraphrased text (images, graphs, etc.), even if adequately referenced
-\end{enumerate}
-Auto- or self-plagiarism, that is the reproduction of (portions of a) text previously written by the author without citing that text, i.e. passing previously authored text as new, may be regarded as fraud if deemed sufficiently severe.
-\end{itemize}
-
 \section{Introduction ($\pm$ 5\% of total words)}
 % no \IEEEPARstart
 This paper presents the bachelor semester project made by Motivated Student together with Motivated Tutor as his motivated tutor.
@@ -402,18 +378,20 @@ The purpose of the deliverable is to research and formalize an answer to the fol
 \emph{How secure is Enigma ?}
 Therefore, the points that will be covered are:
 \begin{itemize}
-    \item{[5.3.1.]} Brief description of Enigma
-    \item{[5.3.2.]} Definition of encryption and how it works in the case of Enigma
-    \item{[5.3.3.]} Breaking Point N°1: "Key Exchange"
-    \item{[5.3.4.]} Breaking Point N°2: "Letters cannot encoded into themselves"
+    \item{[5.3.1.]} Describing what Enigma is
+    \item{[5.3.2.]} Defining the word 'encryption' and how it works in the case of Enigma
+    \item{[5.3.3.]} Explaining Breaking Point N°1: "Key Exchange"
+    \item{[5.3.4.]} Explaining Breaking Point N°2: "Letters cannot encoded into themselves"
 \end{itemize}
 
 \subsection{Design}
-The scientific deliverable is going to start off with a brief description of what Enigma is and introduce encryption which will also be further explained in the next point. With that out of the way, the main part of the report is coming up and explain the flaws of Enigma.\\
+The scientific deliverable is going to start off with a brief description of what Enigma is and introduce encryption which is also further explained at a later point. With that out of the way, the main part of the report is coming up explaining the flaws of Enigma.\\
 
 The first flaw "Key exchange" was of a lesser problem back in the day but to today's standards is as important as the cipher itself. Thereby some examples of today's implementation for key exchange is presented.\\
+The examples provided come from an article from Wikiwand called "Key exchange", these examples are one of many different ways of improving key distribution concerning of modernizing Enigma machine.\\ 
 
-The second flaw, was more focused on the functionality of how encryption behaves concerning Enigma and explain how this affects the security thereby how it could be used to break it.
+The second flaw, was more focused on the functionality of how encryption behaves concerning Enigma and explain how this affects the security thereby how it could be used to break it.\\
+To illustrate a concrete example, a similar approach as the one in an article from Brilliant: "Enigma Machine - Cracking the Enigma Code" was used to explain.\\
 
 \subsection{Production}
 
@@ -422,7 +400,7 @@ The way it worked it was by permuting each letter into another one with the help
 
 \subsubsection{Encryption} Encryption is another means of securing information with a help of mathematical techniques and algorithms. Usually a key is provided which is used to access the information back. The encryption process offers information unreadable to anybody without the proper key. This technique of securing information is advantageous fighting off hackers who are willing to access sensitive information.
 
-\subsubsection{Key Exchange} Each encryption method is conventionally accompanied by a key that is used to process the information encrypted readable again. And thus, for an encryption method to be reliable security of the key plays a big role. At the beginning, people relied on confidentiality of securing the key and utilized a single key thereby the method was called 'single-key' cryptography.\\
+\subsubsection{Breaking Point N°1} Each encryption method is conventionally accompanied by a key that is used to process the information encrypted readable again. And thus, for an encryption method to be reliable security of the key plays a big role. At the beginning, people relied on confidentiality of securing the key and utilized a single key thereby the method was called 'single-key' cryptography.\\
 'Single-Key' cryptography in fact provided insecurities on the level where if the two parties failed exchanging properly the key it increased the chance for a third party to gain acquisition of the key.\\
 Thereby, another methods have been introduced, specifically a two-key system which was the famous 'public-key' cryptography.\\
 It was accompanied with a private and a public key, based on what encryption algorithms was used the uses of these keys depended on it. i.e.: 'Rivest-Shamir-Adleman' (RSA) used the private key for decryption of information where as 'Digital Signature Algorithm' (DSA) used it for authentication purposes.\\
@@ -430,7 +408,7 @@ Another method of securely exchanging keys is the famous 'Diffie-Hellman' (DH) m
 Enigma on the other hand didn't follow any of these 'modern' methods of key exchange and would simply share list of day-to-day configurations of the Enigma to trusted parties which would for a month. To today's standards, this in fact is very dangerous way of distributing information because if it would land on the wrong hands the leak of information wouldn't be resolved soon enough to prevent drawbacks. (In the case of Enigma, war obstructions)\\ 
 Nonetheless, in this case a simple solution is to modernize the key distribution by using more modern methods like stated above (i.e.:  RSA, DSA, DH, \ldots)
 
-\subsubsection{Letters cannot be encoded into themselves}
+\subsubsection{Breaking Point N°2}
 During the WWII, many of the parties that were trying to break Enigma have noticed a simple but very big flaw in the encryption technique of the machine. Which was too difficult to fix provided by the techniques that existed at the time. The flaw was lying much deeper under the surface and involved many interactions between other components to resolve.
 Thereby, another breaking point of Enigma was the fact that a letter cannot represent itself during encryption based on the functionality and how Enigma works.\\
 Which means, when the user would press the letter "A", the output would \underline{never} be encoded as the letter "A".\\
@@ -547,6 +525,29 @@ The authors would like to thank the BiCS management and education team for the a
 
 \section{Conclusion}
 The conclusion goes here.
+
+\section{Plagiarism statement}
+
+\newline
+I declare that I am aware of the following facts:
+\begin{itemize}
+	\item As a student at the University of Luxembourg I must respect the rules of intellectual honesty, in particular not to resort to plagiarism, fraud or any other method that is illegal or contrary to scientific integrity.
+	\item My report will be checked for plagiarism and if the plagiarism check is positive, an internal procedure will be started by my tutor. I am advised to request a pre-check by my tutor to avoid any issue.
+	\item As declared in the assessment procedure of the University of Luxembourg, plagiarism is committed whenever the source of information used in an assignment, research report, paper or otherwise published/circulated piece of work is not properly acknowledged. In other words, plagiarism is the passing off as one’s own the words, ideas or work of another person, without attribution to the author. The omission of such proper acknowledgement amounts to claiming authorship for the work of another person. Plagiarism is committed regardless of the language of the original work used. Plagiarism can be deliberate or accidental.
+Instances of plagiarism include, but are not limited to:
+\begin{enumerate}
+  \item Not putting quotation marks around a quote from another person’s work
+  \item Pretending to paraphrase while in fact quoting
+  \item Citing incorrectly or incompletely
+  \item Failing to cite the source of a quoted or paraphrased work
+  \item Copying/reproducing sections of another person’s work without acknowledging the source
+  \item Paraphrasing another person’s work without acknowledging the source
+  \item Having another person write/author a work for oneself and submitting/publishing it (with permission, with or without compensation) in one’s own name (‘ghost-writing’)
+  \item Using another person’s unpublished work without attribution and permission (‘stealing’)
+  \item Presenting a piece of work as one’s own that contains a high proportion of quoted/copied or paraphrased text (images, graphs, etc.), even if adequately referenced
+\end{enumerate}
+Auto- or self-plagiarism, that is the reproduction of (portions of a) text previously written by the author without citing that text, i.e. passing previously authored text as new, may be regarded as fraud if deemed sufficiently severe.
+\end{itemize}
 
 % An example of a floating figure using the graphicx package.
 % Note that \label must occur AFTER (or within) \caption.
@@ -688,9 +689,15 @@ J~Scott Armstrong and Kesten~C Green.
 \section{Appendix}
 \begin{figure}[h!]
     \centering
-        \includegraphics[scale = 1]{pathway.png}
-        \caption{Test}
-    \label{fig:test}
+    \includegraphics[scale = .7]{pathway.png}
+    \caption{Pathway of Electrical Flow}
+    \label{fig:path}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = .7]{interface.png}
+    \caption{Interface}
+    \label{fig:infac}
 \end{figure}
 % that's all folks
 \end{document}
