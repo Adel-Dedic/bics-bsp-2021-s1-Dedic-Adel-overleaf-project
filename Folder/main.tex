@@ -470,7 +470,11 @@ In this case the letter 'I' is matching, thereby also not the right encoding.\\
  \hline
 \end{tabular}\\
 
-Finally where none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages.\\
+%\begin{verbatim}
+%console.log("test")
+%\end{verbatim}
+
+Finally where none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages. Figure \ref{fig:test}\\
 
 
 \subsection{Assessment ($\pm$ 15\% of section's words)}
@@ -482,10 +486,13 @@ Provide any objective elements to assess that your deliverables do or do not sat
 \subsection{Requirements}
 The program is supposed to polished and posses similarities but also improve upon if necessary of the original Enigma machine, in this case:
 \begin{itemize}
-    \item The program should include a relatable interface
+    \item The program should include an interface that reassemble the original
     \item Fully configurable rotor settings which would increment dynamically
     \item Unlike the original, a text-box where the user is able to input a whole string of text and process it whole
-    \item For the ease of usability, the user should be able to easily test messages. i.e.: an function to import, export and switch output with input
+    \item The program shall output enciphered string of text which was processed through the following rotor settings
+    \item 
+    \item The program shall provide functionality of importing and exporting 'keys'
+    \item For usability, the user shall be able to test strings by quickly transferring output to input
     \item And finally, the program shouldn't depend on anything external to function alike the original
 \end{itemize}
 
@@ -679,7 +686,12 @@ J~Scott Armstrong and Kesten~C Green.
 \end{thebibliography}
 \newpage 
 \section{Appendix}
-All images and additional material go there.
+\begin{figure}[h!]
+    \centering
+        \includegraphics[scale = 1]{pathway.png}
+        \caption{Test}
+    \label{fig:test}
+\end{figure}
 % that's all folks
 \end{document}
 
