@@ -385,7 +385,7 @@ Therefore, the points that will be covered are:
 \end{itemize}
 
 \subsection{Design}
-The scientific deliverable is going to start off with a brief description of what Enigma is and introduce encryption which is also further explained at a later point. With that out of the way, the main part of the report is coming up explaining the flaws of Enigma.\\
+The scientific deliverable shall explain through a brief description of what Enigma is and introduce encryption which is also further explained at a later point. With that out of the way, the main part of the report is to explain the flaws of Enigma and present a remedy.\\
 
 The first flaw "Key exchange" was of a lesser problem back in the day but to today's standards is as important as the cipher itself. Thereby some examples of today's implementation for key exchange is presented.\\
 The examples provided come from an article from Wikiwand called "Key exchange", these examples are one of many different ways of improving key distribution concerning of modernizing Enigma machine.\\ 
@@ -452,11 +452,14 @@ In this case the letter 'I' is matching, thereby also not the right encoding.\\
 %console.log("test")
 %\end{verbatim}
 
-Finally where none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages. Figure \ref{fig:test}\\
+In the last case none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages.\\
+
+In conclusion, the unmissable solution is to provide a possibility for the machine to be able to encrypt letters into themselves. This in fact would eliminate the current method of breaking the code and thereby increase the security of the device immensely. 
 
 
-\subsection{Assessment ($\pm$ 15\% of section's words)}
-Provide any objective elements to assess that your deliverables do or do not satisfy the requirements described above. 
+\subsection{Assessment}
+The scientific deliverable established the flaws of Enigma and through research, some examples have been provided on how to fix those issues. 
+Thereby, we have successfully presented how secure Enigma is and what precautions we can still take to improve its security.\\
 
 \section{ A Technical Deliverable 1}
 \label{sec-production}
@@ -505,18 +508,30 @@ The permutation is a process of 3 different mathematical operations:\\
     \item Secondly subtracting the rotor 2 from the step;\\
     \item Finally, adding the double of the rotor 3 to the step.\\
 \end{itemize}
-Second part is the 'rotor change' whose objective is to increment rotors in a respectful order and make sure that the rotors stay between their boundaries (1-26).\\
-Once the first rotor completes a whole turn the second rotor increments by 1 and so on.\\
+The stated mathematical operations are produced in a way to result a non-commutable rotors behaviour. This means that the order the user has set them up plays a big role into securing the code and thus making it harder to break.\\ 
+For the operations themselves are designed to produce a more linear 'step' and balancing how far the 'step' can go in either direction. Increasing or making the operations harder to compute does not have a greater expense on the security due to how the encryption can behave.\\
+e.g. The alphabet is consisted of 26 letters and thus if the 'step' is much greater ($>$100) will only turn around but still end-up between 1 and 26 (which are designated for each letter of the alphabet).\\
 
-Third part which in this case is two different functions, those being 'encrypt' and 'decrypt'. The prior being the main function whose objective is to rotate (encrypt) each character while also initiating the 'rotor change' each time. This provides a step for the 'rotate character' which is dynamic in this case.\\
+Second part is the 'rotor change' whose objective is to increment rotors in a respectful order and make sure that the rotors stay between their boundaries (1-26).\\
+This means that through many 'if statements' we assure that rotors behave like they're supposed to.\\
+Once the first rotor completes a whole turn the second rotor increments by 1 and so on.\\
+This is carefully made to resemble the functionality of its predecessors.\\
+
+Third part which in this case is two different functions, those being 'encrypt' and 'decrypt'. The prior being the main function whose objective is to rotate (encrypt) each character while also initiating the 'rotor change' each time. This provides a 'step' which in fact is dynamic in this case for each character of a given string.\\
+The reason why there are two separate functions is due to the by-product of willing to present a more modern version of Enigma where the user is able to input a whole string of text and process them as a whole. The whole functionality is quite more satisfying as a result if compared to the old technique where each letter or character had to pressed in a key-by-key method.\\
+
+For productivity, if the user desires to test strings out another choice is given in the middle of the interface called 'transfer'. It is carefully placed in between of the two text boxes to incentivize its functionality of being able to 'transfer' the given output as the input and thus the user is able to proceed processing the message again. This in fact results into a more fluent orientation through the program because it offers the user to test strings easier.  \\
+
 
 Last part of the program is the functionality of import/export, whose job is create, respectfully read, a text file named 'key.txt'.\\
 
 The intention is to provide usability to the user whilst operating with the program, thereby the change to the interface compared to the original was quite needed to fulfill the intention.\\
 This version provides the user to process a whole string of a text instead of the 'key-by-key' method, due to the reason where latter provided a slow process to read longer texts.\\
 
-\subsection{Assessment ($\pm$ 15\% of section's words)}
-cf. section~\ref{sec-production} applied to the technical deliverable
+\subsection{Assessment}
+As desired the product at the end is behaving very similarly to the original Enigma, from dynamic rotors to behaviour of encryption, the product is successfully accomplished.\\
+The program is capable of encryption, decryption and saving keys in a easier fashion.\\
+The interface has been clearly done to favor even those who don't know much about it Enigma. It promotes testing and playing around with each functionality.\\
 
 
 \section*{Acknowledgment}
@@ -695,7 +710,7 @@ J~Scott Armstrong and Kesten~C Green.
 \end{figure}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = .7]{interface.png}
+    \includegraphics[scale = .9]{interface.png}
     \caption{Interface}
     \label{fig:infac}
 \end{figure}
