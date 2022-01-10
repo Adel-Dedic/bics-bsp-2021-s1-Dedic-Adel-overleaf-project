@@ -221,19 +221,19 @@
 % not capitalized unless they are the first or last word of the title.
 % Linebreaks \\ can be used within to get better formatting as desired.
 % Do not put math or special symbols in the title.
-\title{BSPro - A First Bachelor Semester Project in BiCS-land\\
+\title{Enigma Machine: an encryption device capable of decryption simultaneously\\
 {\small \today~-~\currenttime}}
 
  
 % author names and affiliations
 % use a multiple column layout for up to three different
 % affiliations
-\author{\IEEEauthorblockN{Dedic Adel}
+\author{\IEEEauthorblockN{Adel Dedic}
 \IEEEauthorblockA{University of Luxembourg\\
 Email: adel.dedic.001@student.uni.lu}
 \\
 {\bf This report has been produced under the supervision of:}\\
-\IEEEauthorblockN{Benoit Ries}
+\IEEEauthorblockN{Benoît Ries}
 \IEEEauthorblockA{University of Luxembourg\\
 Email: benoit.ries@uni.lu}%
 }
@@ -280,12 +280,7 @@ Email: benoit.ries@uni.lu}%
 % As a general rule, do not put math, special symbols or citations
 % in the abstract
 \begin{abstract}
-This document is a template for the scientific and technical (S\&T for short) report that is to be delivered by any BiCS student at the end of each Bachelor Semester Project (BSP). The Latex source files are available at:\\
-\href{https://github.com/nicolasguelfi/lu.uni.course.bics.global}{{\underline{\textbf{https://github.com/nicolasguelfi/lu.uni.course.bics.global}}}}\\
-  
-This template is to be used using the Latex document preparation system or using any document preparation system. The whole document should be in between 6000 to 8000 words~\footnote{i.e. approximately 12 to 16 pages double columns excluding the Plagiarism Statement} (excluding the annexes) and the proportions must be preserved. The other documents to be delivered (summaries, \ldots) should have their format adapted from this template.\\
-
-A tutor (or any person having contributed to the BSP work) is not a co-author per se for a student's work. It is possible to exploit a BSP report to produce a scientific and technical publication. In this case, the authors list has to be discussed and agreed with the concerned parties.
+This  document  is  the  final  report  of  the  Bachelor Semester   Project   of   the   student   Adel Dedic   which   was conducted with the help of his tutor Benoît Ries. This project is  part  of  the  Bachelor  in  Computer  Science  program  at  the University of Luxembourg during the first semester of study. This project is looking to produce a program that is reminiscent to the original Enigma machine. With the assistance of distinct flaws that surround the Enigma, the security of the machine is examined and thus prompting another option for communication.
 
 \end{abstract}
 
@@ -301,57 +296,30 @@ A tutor (or any person having contributed to the BSP work) is not a co-author pe
 % creates the second title. It will be ignored for other modes.
 \IEEEpeerreviewmaketitle
 
-\section{Introduction ($\pm$ 5\% of total words)}
+\section{Introduction}
 % no \IEEEPARstart
-This paper presents the bachelor semester project made by Motivated Student together with Motivated Tutor as his motivated tutor.
-It presents the scientific and technical dimensions of the work done. All the words written here have been newly created by the authors and if some sequence of words or any graphic information created by others are included then it is explicitly indicated the original reference to the work reused. 
+An encryption system that was invented during the most frightful years for somebody to endure has took many by surprise by how difficult it is to break, considered impossible to crack during it's time, with such a sophisticated machinery that little of few people knew how it works even less so how to build one of their own.\\
+One of the first Enigma patent was filed in 1918 by co-founders of a German firm, Scherbius and Ritter, for it's sole purpose being an option for communication for companies and governments that is safe and well protected against outside intervention. During it's time, no body knew how important of an object such as Enigma would be crucial for the outcome of World War II.\\
+The main objective of the Bachelor Semester Project will be to create a program that should simulate the intentions of the original Enigma machine, that being able to encrypt and decrypt messages simultaneously in one piece of software.
+Other prominent features like how the encryption part behaves where every character is encrypted dynamically but also the possibility of configuring the rotors are all present. The program is equipped with features that eases the usability like being able to export and import keys that contain only the crucial information for being processed and thus making the program imminent for being able to read the contents of the key file.\\
+The program also promotes testing messages by providing a technique that allows the user to easily transfer one output message to the input section for further examination purposes while smartly keeping other settings intact.\\
 
-This report separates explicitly the scientific work from the technical one. In deed each BSP must cover those two dimensions with a constrained balance  (cf. \cite{bics-bsp-reference-document}). Thus it is up to the Motivated Tutor and Motivated Student to ensure that the deliverables belonging to each dimension are clearly stated. As an example, a project whose title would be ``PLAYTOUCH - A multi-user game for multi-touch devices'' could define the following deliverables:
-\begin{itemize}
-  \item Possible scientific~\cite{armstrong2017guidelinesforscience} deliverables:
-		\begin{itemize}
-			\item What are concurrency models and how are they implemented?
-			\item How is measured ergonomics in human-computer interaction?
-			\item How to model the concurrency of a multi-touch devices?
-			\item Can PLAYTOUCH enter in a blocking state?
-			\item How to model the design of PLAYTOUCH?
-		\end{itemize}
-  \item Possible Technical deliverables:
-		\begin{itemize}
-			\item PLAYTOUCH Implementation
-			\item PLAYTOUCH Tests implementation
-			\item Hardware end system configuration for PLAYTOUCH
-		\end{itemize}
-
-\end{itemize}
-The length of the report should be from 6000 to 8000 words excluding images and annexes. The sections presenting the technical and scientific deliverables represent $\pm$ 80\% of total words of the report.
 
 \section{Project description ($\pm$ 10\% of total words) }
 \subsection{Domains}
 \subsubsection{Scientific }
-Provide a short description of the scientific domain(s) in which the project is being made.
+In the scientific part of this project is asked "How secure is Enigma ?". And the question is answered by analyzing the prominent breaking points of the machine and thus coloring a better picture for the answer.
 \subsubsection{Technical}
-Provide a short description of the technical domain(s) in which the project is being made.
+In the technical part of this project a program is produced that simulates the Enigma machine, a technique for the encryption is created and in the software it's included every other notable aspect of the machine. A GUI for the program is developed to compliment the original piece (e.g.: visual rotor settings).
 
 \subsection{Targeted Deliverables}
 \label{sec-deliverables}
 \subsubsection{Scientific deliverables}
-Provide a synthetic and abstract description of the scientific deliverables that have been produced. 
-Each BSP must contain some work done according to the principles of the scientific method. It basically means that you should define at least one question related to the knowledge domain of your BSP and follow part of the scientific method process to answer this question. The description of the work done to answer this question is a scientific deliverable.
-
-Other examples of question could be:
-\begin{itemize}
-	\item Is Python an adequate language for concurrent programs?
-	\item How can we measure the ergonomics of a graphical user interface?
-	\item How can we ensure that a program will not fail?
-\end{itemize}
-
-An answer to such question should be the result of applying partly or totally the scientific method according to its standard definition which can be found in the literature.
-
-As you can see in this template, the scientific deliverable is entirely separated from the technical deliverable. It the default case it addresses a question closely related to the technical deliverable.  
+As a scientific report, some research is required to understand where the breaking points of the original Enigma are laid but also in the regard of the breaking point a remediation is proposed that could be implemented to modernize the machine. Once these are explained a small somewhat conclusion is presented to provide a scientific explanation for how these are related to the security of the Enigma.
 
 \subsubsection{Technical deliverables}
-Provide a synthetic and abstract description of the technical deliverables that were targeted to be produced. A technical deliverable in this report is the description of a product  build by the student using software or hardware technologies.
+As a technical report a program will be developed to simulate the original Enigma machine that is equipped with the option of encryption and decryption following the rotors settings that have been configured previously. The software is developed through Python thus is lightweight but also no other external software is required to work. \\
+The option to export a key is also provided to make the exchange of messages more user friendly but the key solely is useless without the software due to the fact only crucial information is saved upon. Furthermore, a Graphical User Interface is created following a distinct homage to the original machine.\\
 
 
 % \subsection{Constraints}
@@ -371,21 +339,22 @@ This applies to any general programming knowledge as well not necessarily Python
 Taken in consideration that not all programming languages share same structure or functions.\\
 
 
-\section{ A Scientific Deliverable 1}
+\section{ Security of Enigma}
 \label{sec-production}
 \subsection{Requirements}
-The purpose of the deliverable is to research and formalize an answer to the following question:
-\emph{How secure is Enigma ?}
-Therefore, the points that will be covered are:
+The purpose of the deliverable is to research and formalize an answer to the following question: \emph{How secure is Enigma ?}\\
+Therefore, the deliverable shall cover:
 \begin{itemize}
     \item{[5.3.1.]} Describing what Enigma is
     \item{[5.3.2.]} Defining the word 'encryption' and how it works in the case of Enigma
-    \item{[5.3.3.]} Explaining Breaking Point N°1: "Key Exchange"
-    \item{[5.3.4.]} Explaining Breaking Point N°2: "Letters cannot encoded into themselves"
+    \item{[5.3.3.]} Defining what a breaking point in the context means
+    \item{[5.3.4.]} Explaining Breaking Point N°1: Key Exchange
+    \item{[5.3.5.]} Explaining Breaking Point N°2: Fundamental encryption problem which refuses to let a letter to be encoded into itself during the encryption process
+    \item{[5.3.6.]} Summarizing the relation between the breaking points and the security of the Enigma
 \end{itemize}
 
 \subsection{Design}
-The scientific deliverable shall explain through a brief description of what Enigma is and introduce encryption which is also further explained at a later point. With that out of the way, the main part of the report is to explain the flaws of Enigma and present a remedy.\\
+The scientific deliverable shall explain through a brief description of what Enigma is and introduce encryption which is also further explained at a later point. With that out of the way, the main part of the report is to explain the flaws of Enigma, in this case we call them 'breaking points' and shall be respectfully defined before any examples are given, and present a remedy for each flaw.\\
 
 The first flaw "Key exchange" was of a lesser problem back in the day but to today's standards is as important as the cipher itself. Thereby some examples of today's implementation for key exchange is presented.\\
 The examples provided come from an article from Wikiwand called "Key exchange", these examples are one of many different ways of improving key distribution concerning of modernizing Enigma machine.\\ 
@@ -395,22 +364,29 @@ To illustrate a concrete example, a similar approach as the one in an article fr
 
 \subsection{Production}
 
+The production is produced following specific steps of defining the important nouns that are going to be used, by using the various resources each breaking point is talked extensively and finally the conclusion at the end is representing the relation between the flaws of the Enigma with it's security.\\  
+
 \subsubsection{Enigma} Enigma is an encryption device which was mostly used by the Germans during the WWII, it was capable of configuring trillions of combinations and thereby rendering the cipher \underline{almost} impossible to crack and such it was preferred way for German army to communicate.\\
-The way it worked it was by permuting each letter into another one with the help of rotors and other components like the plugboard and the reflector. In this case, the rotors act like a step for the letter to move and the rotors change dynamically each time a letter is pressed.
+The way it worked it was by permuting each letter into another one with the help of rotors and other components like the plugboard and the reflector. In this case, the rotors act like a step for the letter to move and the rotors change dynamically each time a letter is pressed. As soon as one rotor finishes the whole turn, the second rotor next to it will turn by 1 and so-on.\\
 
-\subsubsection{Encryption} Encryption is another means of securing information with a help of mathematical techniques and algorithms. Usually a key is provided which is used to access the information back. The encryption process offers information unreadable to anybody without the proper key. This technique of securing information is advantageous fighting off hackers who are willing to access sensitive information.
+\subsubsection{Encryption} Encryption is another means of securing information with a help of mathematical techniques and algorithms. Usually a key is provided which is used to access the information back. The encryption process offers information unreadable to anybody without the proper key. This technique of securing information is advantageous fighting off hackers who are willing to access sensitive information.\\
 
-\subsubsection{Breaking Point N°1} Each encryption method is conventionally accompanied by a key that is used to process the information encrypted readable again. And thus, for an encryption method to be reliable security of the key plays a big role. At the beginning, people relied on confidentiality of securing the key and utilized a single key thereby the method was called 'single-key' cryptography.\\
-'Single-Key' cryptography in fact provided insecurities on the level where if the two parties failed exchanging properly the key it increased the chance for a third party to gain acquisition of the key.\\
-Thereby, another methods have been introduced, specifically a two-key system which was the famous 'public-key' cryptography.\\
+\subsubsection{Breaking Points} To continue forward we will have to define what a breaking point in this case is standing for. Each machine of technology is undoubtedly made by a human hand and thereby the chances of a machine to be flawed is greater than expected due to the nature of humans being flawed as well. A breaking point is a feature of the machine which was left for outside intervention to fiddle with and exploiting other property of the machine. In this case, each breaking point is a vulnerability that anybody can use to achieve accessing the hidden meaning behind an encrypted message.\\
+
+\subsubsection{Breaking Point N°1: Key Exchange} Each encryption method is conventionally accompanied by a key that is used to process the information encrypted readable again. And thus, for an encryption method to be reliable security of the key plays a big role. At the beginning, people relied on confidentiality of securing the key and utilized a single key thereby the method was called 'single-key' cryptography.\\
+'Single-Key' cryptography (also called 'symmetric encryption') in fact provided insecurities on the level where if the two parties failed exchanging properly the key it increased the chance for a third party to gain acquisition of the key.\\
+Thereby, another methods have been introduced, specifically a two-key system which was the famous 'public-key' cryptography (also called 'asymmetric encryption').\\
 It was accompanied with a private and a public key, based on what encryption algorithms was used the uses of these keys depended on it. i.e.: 'Rivest-Shamir-Adleman' (RSA) used the private key for decryption of information where as 'Digital Signature Algorithm' (DSA) used it for authentication purposes.\\
 Another method of securely exchanging keys is the famous 'Diffie-Hellman' (DH) method, even though this method was one of the earliest to come to light it's still broadly used on multiple platforms. The method consists of generating am unique public and an unique private key for both parties resulting a combination of one's private key and other's public key gives out the secret information.\\
-Enigma on the other hand didn't follow any of these 'modern' methods of key exchange and would simply share list of day-to-day configurations of the Enigma to trusted parties which would for a month. To today's standards, this in fact is very dangerous way of distributing information because if it would land on the wrong hands the leak of information wouldn't be resolved soon enough to prevent drawbacks. (In the case of Enigma, war obstructions)\\ 
+Enigma on the other hand didn't follow any of these 'modern' methods of key exchange and would simply share list of day-to-day configurations of the Enigma to trusted parties which would not be changed for a whole month. These configurations can be considered as a 'key' in modern day cryptography.
+To today's standards, this in fact is very dangerous way of distributing information because if it would land on the wrong hands the leak of information wouldn't be resolved soon enough to prevent drawbacks. (In the case of Enigma, war obstructions)\\ 
 Nonetheless, in this case a simple solution is to modernize the key distribution by using more modern methods like stated above (i.e.:  RSA, DSA, DH, \ldots)
 
-\subsubsection{Breaking Point N°2}
-During the WWII, many of the parties that were trying to break Enigma have noticed a simple but very big flaw in the encryption technique of the machine. Which was too difficult to fix provided by the techniques that existed at the time. The flaw was lying much deeper under the surface and involved many interactions between other components to resolve.
-Thereby, another breaking point of Enigma was the fact that a letter cannot represent itself during encryption based on the functionality and how Enigma works.\\
+\subsubsection{Breaking Point N°2: Fundamental encryption problem}
+During the WWII, many of the parties that were trying to break Enigma have noticed a simple but very big failure in the encryption technique of the machine. Which was too difficult to fix provided by the techniques that existed at the time. The flaw was lying much deeper under the surface and involved many interactions between other components to resolve.
+This was due to the fact that all of the components of the machine worked mechanically between each other and if anybody would dare to handle it issues would occur making it unreliable to be used at the time.\\
+e.g.: if the 'pathway' is disrupted or overlapped a short-circuit would take place (Please see Figure \ref{fig:path} to observe the functionality of the pathway)\\
+Thereby, another breaking point of Enigma was the fact that a letter cannot represent itself during encryption based on the functionality.\\
 Which means, when the user would press the letter "A", the output would \underline{never} be encoded as the letter "A".\\
 When a letter is pressed on the machine, an electrical flow is created which passes through numerous components that help permute the letter, in this case rotors and the reflector.
 The electrical flow follows an unique 'pathway' from the pressed letter and lightened up letter. The path never intersects thus the electrical flow can never arrive to the same position where it departed from.\\
@@ -454,30 +430,36 @@ In this case the letter 'I' is matching, thereby also not the right encoding.\\
 
 In the last case none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages.\\
 
-In conclusion, the unmissable solution is to provide a possibility for the machine to be able to encrypt letters into themselves. This in fact would eliminate the current method of breaking the code and thereby increase the security of the device immensely. 
+In conclusion, the elementary solution is to provide a possibility for the machine to be able to encrypt letters into themselves. This in fact would eliminate the current method of breaking the code and thereby increase the security of the device immensely.\\
+
+\subsubsection{Relation between breaking points \& security} Considering the fact that all of the breaking points have been covered by now, to complete the scientific report we shall answer the question that has been asked at the beginning \emph{"How secure is Enigma ?"}\\
+
+Without any improvements to the original Enigma, it's sufficiently secure for personal uses between two parties but if the intent is to use the machine on a larger scale like business organizations then the breaking points should be taken in consideration and implement the remedies that have been listed.\\
+First being of improving a way to exchange the key more securely by using better methods of key exchange like the Diffie-Hellman method and secondly eliminating the possibility of exploiting the not-intended feature where a key can not be encoded into itself.\\
+
+
 
 
 \subsection{Assessment}
 The scientific deliverable established the flaws of Enigma and through research, some examples have been provided on how to fix those issues. 
 Thereby, we have successfully presented how secure Enigma is and what precautions we can still take to improve its security.\\
 
-\section{ A Technical Deliverable 1}
+\section{Program: Enigma Simulator}
 \label{sec-production}
 
 \subsection{Requirements}
-The program is supposed to polished and posses similarities but also improve upon if necessary of the original Enigma machine, in this case:
+The program is supposed to polished and posses similarities but also improve upon if necessary the original Enigma machine, in this case:
 \begin{itemize}
     \item The program should include an interface that reassemble the original
     \item Fully configurable rotor settings which would increment dynamically
     \item Unlike the original, a text-box where the user is able to input a whole string of text and process it whole
     \item The program shall output enciphered string of text which was processed through the following rotor settings
-    \item 
     \item The program shall provide functionality of importing and exporting 'keys'
     \item For usability, the user shall be able to test strings by quickly transferring output to input
     \item And finally, the program shouldn't depend on anything external to function alike the original
 \end{itemize}
 
-\subsection{Design ($\pm$ 30\% of section's words)}
+\subsection{Design}
 The program is easily readable from the surface as soon as the user is introduced to it; on the top the 'rotor section' is located where the user is supposed to insert his/her set of rotor settings. To confirm the rotors, the user shall press the 'Set' button to finalize the process.\\
 This is the first thing the user should be introduced to because this the main functionality of the program and results an unique key for the processed message. The configured settings are important to remember, without them the original message cannot be retrieved easily. Thereby, when the user has set them, the rotors settings are visible to the user thanks to the message above where it clearly states the rotor settings in the form of (X/X/X) where 'X' designates the value of the rotor in the respectful order.\\
 
@@ -498,26 +480,49 @@ The buttons 'Export*' and 'Import*' are again an addition that provide an ease o
 
 The 'key.txt' file created upon 'Export' is easily readable by a human but the content cannot be fully understood without the program to decrypt the processed message.\\ 
 
-\subsection{Production ($\pm$ 40\% of section's words)}
+\subsection{Production}
 
-These parts are formed into functions, first being the 'rotate character' whose job is to permute a character by a step where the step in this case is a permutation of the rotors.\\
+The functionalities that were present in the original Enigma machine were all separated and developed into functions in a python programming language.\\
+First being the 'rotate character' whose job is to permute a character by a step where the step in this case is a permutation of the rotors.\\
 
-The permutation is a process of 3 different mathematical operations:\\
+This is a sneak peek of how the 'step' that is necessary for encryption is permuted
+\begin{verbatim}
+        c_num += enigma.rotor1
+        c_num -= enigma.rotor2
+        c_num += enigma.rotor3*2
+        c_num %=window_width
+\end{verbatim}
+The permutation is a process of 4 different mathematical operations:\\
 \begin{itemize}
     \item Firstly adding the rotor 1 to the step;\\
     \item Secondly subtracting the rotor 2 from the step;\\
-    \item Finally, adding the double of the rotor 3 to the step.\\
+    \item Thirdly, adding the double of the rotor 3 to the step.\\
+    \newpage
+    \item Finally, as we want to keep the step between the borders of letters in the alphabet (1-26), we perform a operation that assures us that result because the first 3 permutations may end up with a step greater than 26.\\
 \end{itemize}
-The stated mathematical operations are produced in a way to result a non-commutable rotors behaviour. This means that the order the user has set them up plays a big role into securing the code and thus making it harder to break.\\ 
+
+The stated mathematical operations are produced in a way to result a non-commutable rotors behaviour. This means that the order the user has set them up plays a big role into securing the code and thus making it harder to break but also creates a configuration which is unique.\\ 
 For the operations themselves are designed to produce a more linear 'step' and balancing how far the 'step' can go in either direction. Increasing or making the operations harder to compute does not have a greater expense on the security due to how the encryption can behave.\\
 e.g. The alphabet is consisted of 26 letters and thus if the 'step' is much greater ($>$100) will only turn around but still end-up between 1 and 26 (which are designated for each letter of the alphabet).\\
 
 Second part is the 'rotor change' whose objective is to increment rotors in a respectful order and make sure that the rotors stay between their boundaries (1-26).\\
 This means that through many 'if statements' we assure that rotors behave like they're supposed to.\\
 Once the first rotor completes a whole turn the second rotor increments by 1 and so on.\\
-This is carefully made to resemble the functionality of its predecessors.\\
+This is carefully made to resemble the functionality of the original version of Enigma.\\
 
 Third part which in this case is two different functions, those being 'encrypt' and 'decrypt'. The prior being the main function whose objective is to rotate (encrypt) each character while also initiating the 'rotor change' each time. This provides a 'step' which in fact is dynamic in this case for each character of a given string.\\
+
+The following is a preview of the main body for encryption method in the program:
+\begin{verbatim}
+    c = rotate_character(c, 'A', 'Z')
+    c = rotate_character(c, 'a', 'z')
+    c = rotate_character(c, '0', '9')
+    result +=c
+    rotor_change()
+\end{verbatim}
+
+For the decryption part, the same method is able to be called but we have to make sure that the steps taken are simply in the reversed position because we want to back track the steps taken previously during the encryption process.\\
+
 The reason why there are two separate functions is due to the by-product of willing to present a more modern version of Enigma where the user is able to input a whole string of text and process them as a whole. The whole functionality is quite more satisfying as a result if compared to the old technique where each letter or character had to pressed in a key-by-key method.\\
 
 For productivity, if the user desires to test strings out another choice is given in the middle of the interface called 'transfer'. It is carefully placed in between of the two text boxes to incentivize its functionality of being able to 'transfer' the given output as the input and thus the user is able to proceed processing the message again. This in fact results into a more fluent orientation through the program because it offers the user to test strings easier.  \\
@@ -525,8 +530,8 @@ For productivity, if the user desires to test strings out another choice is give
 
 Last part of the program is the functionality of import/export, whose job is create, respectfully read, a text file named 'key.txt'.\\
 
-The intention is to provide usability to the user whilst operating with the program, thereby the change to the interface compared to the original was quite needed to fulfill the intention.\\
-This version provides the user to process a whole string of a text instead of the 'key-by-key' method, due to the reason where latter provided a slow process to read longer texts.\\
+The intention is to provide usability to the user whilst operating with the program, thereby the change to the interface compared to the original was quite needed to fulfill the intention of a more user friendly interface.\\
+This version provides the user to process a whole string of a text instead of the 'key-by-key' method, due to the reason where latter provided a slow process to read longer texts but also has greater chance of blundering a letter which would require to restart the process of decryption because if by any mistake the user would press an incorrect letter the rotor would increment no matter what.\\
 
 \subsection{Assessment}
 As desired the product at the end is behaving very similarly to the original Enigma, from dynamic rotors to behaviour of encryption, the product is successfully accomplished.\\
@@ -535,11 +540,14 @@ The interface has been clearly done to favor even those who don't know much abou
 
 
 \section*{Acknowledgment}
-The authors would like to thank the BiCS management and education team for the amazing work done.
+The author would like to personally thank the BiCS management, education team, his tutor Benoit Ries and his tutor's assistant Paul Houssel for the great help and time investment during the project. They helped to overcome any issue that had occurred during the journey.
 
 
 \section{Conclusion}
-The conclusion goes here.
+
+This project help me understand how far the encryption methods have evolved and how much the techniques from the past became obsolete basically. Many new methods of key exchange have been created to provide a more secure communication between different parties and this project helped me understand them better during research.\\   
+Furthermore, the program helped also understand how innovating the machine was for it's time and why it took so long for many people to break it.\\
+Overall we are satisfied with the final deliverable and the product created can always be used to communicate anything discrete if needed.\\
 
 \section{Plagiarism statement}
 
@@ -682,22 +690,44 @@ Auto- or self-plagiarism, that is the reproduction of (portions of a) text previ
 % (used to reserve space for the reference number labels box)
 \begin{thebibliography}{1}
 
-\bibitem[BiCS(2021)]{bics-bsp-report-template}
-\newblock {BiCS Bachelor Semester Project Report Template}.
-\newblock {https://github.com/nicolasguelfi/lu.uni.course.bics.global}
-\newblock {University of Luxembourg, BiCS - Bachelor in Computer Science (2021).}
+\bibitem[1]{bics-bsp-report-template}
+\newblock {Cambridge Dictionary(2021) - Definition of encryption}.\\
+\newblock {https://dictionary.cambridge.org/dictionary/english/encryption}
 
-\bibitem[BiCS(2021)] {bics-bsp-reference-document}
-{Bachelor in Computer Science}:
-\newblock {BiCS Semester Projects Reference Document}.
-\newblock Technical report, University of Luxembourg (2021)
+\bibitem[2]{bics-bsp-report-template}
+\newblock {Enigma Machine | Brilliant}.\\
+\newblock {Karleigh Moore, Ethan W, Ejun Dean, and 1 other contributed}.\\
+\newblock {https://brilliant.org/wiki/enigma-machine}
 
-\bibitem[Armstrong and Green(2017)]{armstrong2017guidelinesforscience}
-J~Scott Armstrong and Kesten~C Green.
-\newblock Guidelines for science: Evidence and checklists.
-\newblock \emph{Scholarly Commons}, pages 1--24, 2017.
-\newblock {https://repository.upenn.edu/marketing_papers/181/}
+\bibitem[3]{bics-bsp-report-template}
+\newblock {The Complete History of the Enigma Machine (2021)}.\\
+\newblock {HISTORY COMPUTER STAFF}.\\
+\newblock {https://history-computer.com/the-complete-history-of-the-enigma-machine}
 
+\bibitem[4]{bics-bsp-report-template}
+\newblock {Wikipedia - Diffie-Hellman key exchange}.\\
+\newblock {https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange}
+
+\bibitem[5]{bics-bsp-report-template}
+\newblock {Wikiwand - Key Exchange}.\\
+\newblock {https://www.wikiwand.com/en/Key_exchange}
+
+\bibitem[6]{bics-bsp-report-template}
+\newblock {The possibility of Non-Secret digital encryption (1970)}.\\
+\newblock {J. H. Ellis}.\\
+\newblock {https://web.archive.org/web/20141030210530/https://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf}
+
+\bibitem[7]{bics-bsp-report-template}
+\newblock {Non-Secret Encryption Using a Finite Field (1974)}.\\
+\newblock {MJ Williamson}.\\
+\newblock {https://web.archive.org/web/20101116234929/http://www.cesg.gov.uk/publications/media/secenc.pdf}
+
+\bibitem[8]{bics-bsp-report-template}
+\newblock {A review on mathematical strength and analysis of
+Enigma (2020)}.\\
+\newblock {Kalika Prasad and Munesh Kumari}.
+\newblock {Department of Mathematics, Central University of Jharkhand, India, 835205}.\\
+\newblock {https://arxiv.org/pdf/2004.09982.pdf}
 
 \end{thebibliography}
 \newpage 
@@ -710,7 +740,13 @@ J~Scott Armstrong and Kesten~C Green.
 \end{figure}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = .9]{interface.png}
+    \includegraphics[scale = .7]{dh-graph.png}
+    \caption{Diffie-Hellman Key Exchange}
+    \label{fig:dh}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.9]{interface.png}
     \caption{Interface}
     \label{fig:infac}
 \end{figure}
