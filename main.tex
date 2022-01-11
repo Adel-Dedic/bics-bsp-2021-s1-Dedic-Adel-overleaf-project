@@ -359,13 +359,16 @@ Therefore, the deliverable shall cover:
 \end{itemize}
 
 \subsection{Design}
-The scientific deliverable shall explain through a brief description of what Enigma is and introduce encryption which is also further explained at a later point. With that out of the way, the main part of the report is to explain the flaws of Enigma, in this case we call them 'breaking points' and shall be respectfully defined before any examples are given, and present a remedy for each flaw.\\
+The scientific deliverable shall explain through a brief description of what Enigma is and introduce encryption which is also further explained at a later point. Another aspect which will be brought up is the analysis of how many different combinations the military version of Enigma is capable to be configured in. This will explain the reason why it was that much harder for code-breakers at the time to even come close at 'cracking' the code in time before the message became obsolete.\\
+With that out of the way, the main part of the report is to explain the flaws of Enigma, in this case we call them 'breaking points' and shall be respectfully defined before any examples are given, and present a remedy for each flaw.\\
 
 The first flaw "Key exchange" was of a lesser problem back in the day but to today's standards is as important as the cipher itself. Thereby some examples of today's implementation for key exchange is presented.\\
 The examples provided come from an article from Wikiwand called "Key exchange", these examples are one of many different ways of improving key distribution concerning of modernizing Enigma machine.\\ 
 
 The second flaw, was more focused on the functionality of how encryption behaves concerning Enigma and explain how this affects the security thereby how it could be used to break it.\\
 To illustrate a concrete example, a similar approach as the one in an article from Brilliant: "Enigma Machine - Cracking the Enigma Code" was used to explain.\\
+
+As a final touch, the points of failure of Enigma and also the complexity will be taken in consideration to produce an answer if the Enigma is well suited and secure enough for the intended use.\\
 
 \subsection{Production}
 
@@ -419,7 +422,8 @@ This information was a great deal for mathematicians and code-breakers at the ti
 At this point, since they knew about the flaw they were missing only one element to pursue and that was to guess a word which would always be included into the enciphered messages. In this case, they found out that a weather report and the phrase "Heil Hitler" was always included, where the latter was at the end of a letter and former at the beginning.\\
 With these two elements, mathematicians used a specific method to break the code; the method was 'process of elimination'. They would compare words to the letters of the code and in the case where a single letter from word was also in the code, then they were assured that the word is not part of the code based on the fact that a letter cannot be itself.\\
 
-Provided example, let's suppose we're comparing the word "windy" to the code (The symbol \# is to indicate the unknown letters):\\
+To further explain how this affects the functionality of the machine, we will provide an example* which will be color indicated; red meaning the two letters overlap and green meaning that they don't.\\
+Let's suppose we're comparing the word "windy" to the code (The symbol \# is to indicate the unknown letters):\\
 
 \begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
  \hline
@@ -457,16 +461,18 @@ In the last case none of the letters match up, which means that the encoding wor
 
 In conclusion, the elementary solution is to provide a possibility for the machine to be able to encrypt letters into themselves. This in fact would eliminate the current method of breaking the code and thereby increase the security of the device immensely.\\
 
+*A similar example has been brought to attention in the following article from Brilliant "Enigma Machine".
+
 \subsubsection{Relation between breaking points \& security} Considering the fact that all of the breaking points have been covered by now, to complete the scientific report we shall answer the question that has been asked at the beginning \emph{"How secure is Enigma ?"}\\
 
-Without any improvements to the original Enigma, it's sufficiently secure for personal uses between two parties due the examination of the sheer value of possible combinations that the machine can be set up, but if the intent is to use the machine on a larger scale like business organizations then the breaking points should be taken in consideration and implement the remedies that have been listed. Especially because nowadays a computer is much faster than a human and the 5 trillions of years that a human would take to break it, a sufficiently strong enough processor can examine all of the combinations under 2 minutes confidently.\\
+Without any improvements to the original Enigma, it's sufficiently secure for personal uses between two parties due the examination of the sheer value of possible combinations that the machine can be set up, but if the intent is to use the machine on a larger scale like business organizations then the breaking points should be taken in consideration and implement the remedies that have been listed. Especially because nowadays a computer is much faster than a human and the 5 trillions of years that a human would take to break it, a sufficiently strong enough processor from a modern computer can examine all of the combinations under 2 minutes confidently.\\
 Thereby to ensure more security we should firstly improve the way to exchange the key more securely by using better methods of key exchange like the Diffie-Hellman method and secondly eliminate the possibility of exploiting the not-intended feature where a key can not be encoded into itself.\\
 
 
 
 
 \subsection{Assessment}
-The scientific deliverable established the flaws of Enigma and through research, some examples have been provided on how to fix those issues. 
+The scientific deliverable established the flaws of Enigma and through research, some examples have been provided on how to fix those issues. Furthermore, we present two cases for one which the original Enigma without any modifications is very well suitable for personal use but for the other case, where security is a bigger issue of importance, to take in consideration the modify the machine following the recommendation that was given to ensure a safer broad communication between two parties.\\
 Thereby, we have successfully presented how secure Enigma is and what precautions we can still take to improve its security.\\
 
 \section{Program: Enigma Simulator}
@@ -476,17 +482,18 @@ Thereby, we have successfully presented how secure Enigma is and what precaution
 The program is supposed to polished and posses similarities but also improve upon if necessary the original Enigma machine, in this case:
 \begin{itemize}
     \item The program should include an interface that reassemble the original
-    \item Fully configurable rotor settings which would increment dynamically
-    \item Unlike the original, a text-box where the user is able to input a whole string of text and process it whole
-    \item The program shall output enciphered string of text which was processed through the following rotor settings
+    \item Fully configurable rotor settings which would increment dynamically in a respectful order (first rotor 1 then rotor 2 and so-on)
+    \item Unlike the original, a text-box where the user is able to input a whole string of text and process it whole thanks to a simple button
+    \item The program shall output enciphered string of text which was processed through the following rotor settings as configured
     \item The program shall provide functionality of importing and exporting 'keys'
     \item For usability, the user shall be able to test strings by quickly transferring output to input
+    \item The program shall still remain user-friendly
     \item And finally, the program shouldn't depend on anything external to function alike the original
 \end{itemize}
 
 \subsection{Design}
 The program is easily readable from the surface as soon as the user is introduced to it; on the top the 'rotor section' is located where the user is supposed to insert his/her set of rotor settings. To confirm the rotors, the user shall press the 'Set' button to finalize the process.\\
-This is the first thing the user should be introduced to because this the main functionality of the program and results an unique key for the processed message. The configured settings are important to remember, without them the original message cannot be retrieved easily. Thereby, when the user has set them, the rotors settings are visible to the user thanks to the message above where it clearly states the rotor settings in the form of (X/X/X) where 'X' designates the value of the rotor in the respectful order.\\
+This is the first thing the user should be introduced to because this the main functionality of the program and the configuration chosen represents the unique key in that instance for the processed message. The configured settings are important to remember, without them the original message cannot be retrieved as easily. Thereby, when the user has set them, the rotors settings are visible to the user thanks to the message above where it clearly states the rotor settings in the form of (X/X/X) where 'X' designates the value of the rotor in the respectful order.\\
 
 Furthermore, the section right below the rotors is where the 'input section' is located. This is where the user is supposed to insert a string of text, that being a simple phrase or a whole paragraph of text, which he/she is wishing to process.\\
 
@@ -503,7 +510,7 @@ The practicality of these buttons extends greater than what it represents on the
 
 The buttons 'Export*' and 'Import*' are again an addition that provide an ease of functionality where the user isn't supposed to write enciphered messages and accompanied rotor configurations manually. The buttons read/create files which include important information (rotor settings and the processed message) and implement them accordingly. In the case of 'Import*', the rotor settings is set and the message is imported into the 'input section' and enables the function to 'Decrypt' the message for the user. On the other hand, the 'Export*' saves the message and settings onto a text-file named 'key.txt'.\\
 
-The 'key.txt' file created upon 'Export' is easily readable by a human but the content cannot be fully understood without the program to decrypt the processed message.\\ 
+The 'key.txt' file created upon 'Export' is easily readable by a human but the contents of the communication cannot be fully understood without the program to decrypt the processed message.\\ 
 
 \subsection{Production}
 
@@ -533,7 +540,7 @@ e.g. The alphabet is consisted of 26 letters and thus if the 'step' is much grea
 Second part is the 'rotor change' whose objective is to increment rotors in a respectful order and make sure that the rotors stay between their boundaries (1-26).\\
 This means that through many 'if statements' we assure that rotors behave like they're supposed to.\\
 Once the first rotor completes a whole turn the second rotor increments by 1 and so on.\\
-This is carefully made to resemble the functionality of the original version of Enigma.\\
+This is carefully made to resemble the functionality of the original version of Enigma because the original rotor was also bounded between the values of 1 to 26.\\
 
 Third part which in this case is two different functions, those being 'encrypt' and 'decrypt'. The prior being the main function whose objective is to rotate (encrypt) each character while also initiating the 'rotor change' each time. This provides a 'step' which in fact is dynamic in this case for each character of a given string.\\
 
@@ -553,14 +560,16 @@ The reason why there are two separate functions is due to the by-product of will
 For productivity, if the user desires to test strings out another choice is given in the middle of the interface called 'transfer'. It is carefully placed in between of the two text boxes to incentivize its functionality of being able to 'transfer' the given output as the input and thus the user is able to proceed processing the message again. This in fact results into a more fluent orientation through the program because it offers the user to test strings easier.  \\
 
 
-Last part of the program is the functionality of import/export, whose job is create, respectfully read, a text file named 'key.txt'.\\
+Last part of the program is the functionality of import/export, whose job is create, respectfully read, a text file named 'key.txt'. The contents of the file created can be observed in the Figure \ref{fig:sample}.\\
+It is well structured for the reasons if anybody is interested to access the file to observe. But as said before, the contents of the message can be seen but meaning behind it is inaccessible without the program to process it first.\\
 
-The intention is to provide usability to the user whilst operating with the program, thereby the change to the interface compared to the original was quite needed to fulfill the intention of a more user friendly interface.\\
+The intention of all of the new additions compared to the original is to provide usability to the user but also adding a better user-friendly experience whilst operating with the program. The change to the interface compared to the original was quite needed as well to fulfill the intention of a more user-friendly interface and a way to incorporate all of the newly added features.\\
 This version provides the user to process a whole string of a text instead of the 'key-by-key' method, due to the reason where latter provided a slow process to read longer texts but also has greater chance of blundering a letter which would require to restart the process of decryption because if by any mistake the user would press an incorrect letter the rotor would increment no matter what.\\
 
 \subsection{Assessment}
-As desired the product at the end is behaving very similarly to the original Enigma, from dynamic rotors to behaviour of encryption, the product is successfully accomplished.\\
+As desired the product at the end is behaving very similarly to the original Enigma, from the feature of dynamic rotors to behaviour of encryption, the product is successfully accomplished.\\
 The program is capable of encryption, decryption and saving keys in a easier fashion.\\
+The product is user-friendly with a more modernized interface but still staying true to it's predecessors.\\
 The interface has been clearly done to favor even those who don't know much about it Enigma. It promotes testing and playing around with each functionality.\\
 
 
@@ -760,7 +769,7 @@ Enigma (2020)}.\\
 \section{Appendix}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = .7]{pathway.png}
+    \includegraphics[scale = .9]{pathway.png}
     \caption{Pathway of Electrical Flow (a figure taken from the paper "A review on mathematical strength and analysis of Enigma"}
     \label{fig:path}
 \end{figure}
@@ -776,6 +785,13 @@ Enigma (2020)}.\\
     \caption{Interface of the Enigma simulator}
     \label{fig:infac}
 \end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[scale = 0.8]{keysample.png}
+    \caption{Contents of sample key.txt file (created during export)}
+    \label{fig:sample}
+\end{figure}
+
 % that's all folks
 \end{document}
 
