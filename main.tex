@@ -308,9 +308,13 @@ The program also promotes testing messages by providing a technique that allows 
 \section{Project description ($\pm$ 10\% of total words) }
 \subsection{Domains}
 \subsubsection{Scientific }
-In the scientific part of this project is asked "How secure is Enigma ?". And the question is answered by analyzing the prominent breaking points of the machine and thus coloring a better picture for the answer.
+In the scientific part of this project will cover articles which are related to security in general and the diverse types of encryption. The different types of cryptography are relevant to the project by being a solution of some sort to one of the main issues that Enigma has.\\
+Analysing and researching security breaches of Enigma is our main domain of the project.\\
+Furthermore, we will analyse how the mathematicians had broken the Enigma by using another fundamental feature of the machine and explain in fact the whole process of encryption works in that case.\\
+
 \subsubsection{Technical}
-In the technical part of this project a program is produced that simulates the Enigma machine, a technique for the encryption is created and in the software it's included every other notable aspect of the machine. A GUI for the program is developed to compliment the original piece (e.g.: visual rotor settings).
+In the technical part of this project a program is produced that simulates the Enigma machine. A GUI for the program is developed to compliment the original piece (e.g.: visual rotor settings). The main domain used to produce the technical was a programming language called Python. One of the main reasons why Python was used was solely based upon the fact that this programming language promotes readability and it is well suited for small and large scale projects like this.\\
+Additionally, Python was the best option to assure user-friendly navigation through the code thanks to it's significant interface.\\
 
 \subsection{Targeted Deliverables}
 \label{sec-deliverables}
@@ -346,11 +350,12 @@ The purpose of the deliverable is to research and formalize an answer to the fol
 Therefore, the deliverable shall cover:
 \begin{itemize}
     \item{[5.3.1.]} Describing what Enigma is
-    \item{[5.3.2.]} Defining the word 'encryption' and how it works in the case of Enigma
-    \item{[5.3.3.]} Defining what a breaking point in the context means
-    \item{[5.3.4.]} Explaining Breaking Point N°1: Key Exchange
-    \item{[5.3.5.]} Explaining Breaking Point N°2: Fundamental encryption problem which refuses to let a letter to be encoded into itself during the encryption process
-    \item{[5.3.6.]} Summarizing the relation between the breaking points and the security of the Enigma
+    \item{[5.3.2.]} Analysing the value of combinations
+    \item{[5.3.3.]} Defining the word 'encryption' and how it works in the case of Enigma
+    \item{[5.3.4.]} Defining what a breaking point in the context means
+    \item{[5.3.5.]} Explaining Breaking Point N°1: Key Exchange
+    \item{[5.3.6.]} Explaining Breaking Point N°2: Fundamental encryption problem which refuses to let a letter to be encoded into itself during the encryption process
+    \item{[5.3.7.]} Summarizing the relation between the breaking points and the security of the Enigma
 \end{itemize}
 
 \subsection{Design}
@@ -366,8 +371,27 @@ To illustrate a concrete example, a similar approach as the one in an article fr
 
 The production is produced following specific steps of defining the important nouns that are going to be used, by using the various resources each breaking point is talked extensively and finally the conclusion at the end is representing the relation between the flaws of the Enigma with it's security.\\  
 
-\subsubsection{Enigma} Enigma is an encryption device which was mostly used by the Germans during the WWII, it was capable of configuring trillions of combinations and thereby rendering the cipher \underline{almost} impossible to crack and such it was preferred way for German army to communicate.\\
+\subsubsection{Enigma} Enigma is an encryption device which was mostly used by the Germans during the WWII, it was capable of configuring trillions of combinations and thereby rendering the cipher \underline{almost} impossible to crack and such it was preferred way for German army to communicate due being believed at the time that the machine was unbreakable.\\
 The way it worked it was by permuting each letter into another one with the help of rotors and other components like the plugboard and the reflector. In this case, the rotors act like a step for the letter to move and the rotors change dynamically each time a letter is pressed. As soon as one rotor finishes the whole turn, the second rotor next to it will turn by 1 and so-on.\\
+
+\subsubsection{Number of combinations}
+As stated above, it was believed by the Germans with confidence that the machine was unbreakable and it wasn't without their reasons. To explain, I will take in consideration of the early models of Enigma that was using by the German army, Funkschlüssel C ("Radio cipher C").\\
+This model had introduced the plugboard to the mix of combinations but also giving the option to choose 3 out of 5 different rotors whose order in which placed matters.\\
+\begin{equation}
+    \frac{5!}{5-3!}=60
+\end{equation}
+For the 3 out of 5 rotors, the order can be arranged in 60 ways.\\
+
+\begin{equation}
+    26^3=17576
+\end{equation}
+Each of the 3 rotors have 26 possible positions making another 17 576 ways to configure.\\
+\begin{equation}
+    \frac{26!}{(26-20)!\times2^{10}\times10!}=150738274937250
+\end{equation}
+And lastly the plugboard with 10 different pairs of letters being to switched, with the greatest impact, it allows another 150 738 274 937 250 of different combinations.\\
+If we multiply these factors we end up with 158 962 555 217 826 360 000 possible combinations that the machine is able to be set in. And considering the fact that at the time all of the combinations were tested out manually by hand, it's not surprising why it was believed that nobody could crack the Enigma.\\
+If somebody would try to go over every possible combination and managed to keep a speed of trying one combination a second, it would still take at least a bit over than 5 trillion years to go through each configuration one by one. ($\frac{158962555217826360000}{60\times60\times24\times365.5}\approx5.034\times10^{12}$)
 
 \subsubsection{Encryption} Encryption is another means of securing information with a help of mathematical techniques and algorithms. Usually a key is provided which is used to access the information back. The encryption process offers information unreadable to anybody without the proper key. This technique of securing information is advantageous fighting off hackers who are willing to access sensitive information.\\
 
@@ -378,6 +402,7 @@ The way it worked it was by permuting each letter into another one with the help
 Thereby, another methods have been introduced, specifically a two-key system which was the famous 'public-key' cryptography (also called 'asymmetric encryption').\\
 It was accompanied with a private and a public key, based on what encryption algorithms was used the uses of these keys depended on it. i.e.: 'Rivest-Shamir-Adleman' (RSA) used the private key for decryption of information where as 'Digital Signature Algorithm' (DSA) used it for authentication purposes.\\
 Another method of securely exchanging keys is the famous 'Diffie-Hellman' (DH) method, even though this method was one of the earliest to come to light it's still broadly used on multiple platforms. The method consists of generating am unique public and an unique private key for both parties resulting a combination of one's private key and other's public key gives out the secret information.\\
+For a clearer picture, an example from an article is shown as Figure \ref{fig:dh}.\\
 Enigma on the other hand didn't follow any of these 'modern' methods of key exchange and would simply share list of day-to-day configurations of the Enigma to trusted parties which would not be changed for a whole month. These configurations can be considered as a 'key' in modern day cryptography.
 To today's standards, this in fact is very dangerous way of distributing information because if it would land on the wrong hands the leak of information wouldn't be resolved soon enough to prevent drawbacks. (In the case of Enigma, war obstructions)\\ 
 Nonetheless, in this case a simple solution is to modernize the key distribution by using more modern methods like stated above (i.e.:  RSA, DSA, DH, \ldots)
@@ -434,8 +459,8 @@ In conclusion, the elementary solution is to provide a possibility for the machi
 
 \subsubsection{Relation between breaking points \& security} Considering the fact that all of the breaking points have been covered by now, to complete the scientific report we shall answer the question that has been asked at the beginning \emph{"How secure is Enigma ?"}\\
 
-Without any improvements to the original Enigma, it's sufficiently secure for personal uses between two parties but if the intent is to use the machine on a larger scale like business organizations then the breaking points should be taken in consideration and implement the remedies that have been listed.\\
-First being of improving a way to exchange the key more securely by using better methods of key exchange like the Diffie-Hellman method and secondly eliminating the possibility of exploiting the not-intended feature where a key can not be encoded into itself.\\
+Without any improvements to the original Enigma, it's sufficiently secure for personal uses between two parties due the examination of the sheer value of possible combinations that the machine can be set up, but if the intent is to use the machine on a larger scale like business organizations then the breaking points should be taken in consideration and implement the remedies that have been listed. Especially because nowadays a computer is much faster than a human and the 5 trillions of years that a human would take to break it, a sufficiently strong enough processor can examine all of the combinations under 2 minutes confidently.\\
+Thereby to ensure more security we should firstly improve the way to exchange the key more securely by using better methods of key exchange like the Diffie-Hellman method and secondly eliminate the possibility of exploiting the not-intended feature where a key can not be encoded into itself.\\
 
 
 
@@ -484,6 +509,7 @@ The 'key.txt' file created upon 'Export' is easily readable by a human but the c
 
 The functionalities that were present in the original Enigma machine were all separated and developed into functions in a python programming language.\\
 First being the 'rotate character' whose job is to permute a character by a step where the step in this case is a permutation of the rotors.\\
+If for any case an interpretation is necessary, please take a look at the last Figure \ref{fig:infac} where the whole interface of the software is presented.\\
 
 This is a sneak peek of how the 'step' that is necessary for encryption is permuted
 \begin{verbatim}
@@ -497,7 +523,6 @@ The permutation is a process of 4 different mathematical operations:\\
     \item Firstly adding the rotor 1 to the step;\\
     \item Secondly subtracting the rotor 2 from the step;\\
     \item Thirdly, adding the double of the rotor 3 to the step.\\
-    \newpage
     \item Finally, as we want to keep the step between the borders of letters in the alphabet (1-26), we perform a operation that assures us that result because the first 3 permutations may end up with a step greater than 26.\\
 \end{itemize}
 
@@ -545,7 +570,7 @@ The author would like to personally thank the BiCS management, education team, h
 
 \section{Conclusion}
 
-This project help me understand how far the encryption methods have evolved and how much the techniques from the past became obsolete basically. Many new methods of key exchange have been created to provide a more secure communication between different parties and this project helped me understand them better during research.\\   
+This project helps understand how far the encryption methods have evolved and how much the techniques from the past became obsolete compared to the modern ones. Many new methods of key exchange have been created to provide a more tight communication between different parties and this project incorporates the new methods to provide an example for a more secure product.\\   
 Furthermore, the program helped also understand how innovating the machine was for it's time and why it took so long for many people to break it.\\
 Overall we are satisfied with the final deliverable and the product created can always be used to communicate anything discrete if needed.\\
 
@@ -705,22 +730,23 @@ Auto- or self-plagiarism, that is the reproduction of (portions of a) text previ
 \newblock {https://history-computer.com/the-complete-history-of-the-enigma-machine}
 
 \bibitem[4]{bics-bsp-report-template}
-\newblock {Wikipedia - Diffie-Hellman key exchange}.\\
-\newblock {https://en.wikipedia.org/wiki/Diffie–Hellman_key_exchange}
+\newblock {New Directions in Cryptography (1976)}.\\
+\newblock {Whitfield Diffie AND Martin E. Hellman, Member, IEEE}.\\
+\newblock {https://ee.stanford.edu/~hellman/publications/24.pdf}
 
 \bibitem[5]{bics-bsp-report-template}
 \newblock {Wikiwand - Key Exchange}.\\
-\newblock {https://www.wikiwand.com/en/Key_exchange}
+\newblock {https://www.wikiwand.com/en/Key\_exchange}
 
 \bibitem[6]{bics-bsp-report-template}
 \newblock {The possibility of Non-Secret digital encryption (1970)}.\\
 \newblock {J. H. Ellis}.\\
-\newblock {https://web.archive.org/web/20141030210530/https://cryptocellar.web.cern.ch/cryptocellar/cesg/possnse.pdf}
+\newblock {shorturl.at/euvTZ}
 
 \bibitem[7]{bics-bsp-report-template}
 \newblock {Non-Secret Encryption Using a Finite Field (1974)}.\\
 \newblock {MJ Williamson}.\\
-\newblock {https://web.archive.org/web/20101116234929/http://www.cesg.gov.uk/publications/media/secenc.pdf}
+\newblock {shorturl.at/rJKN0}
 
 \bibitem[8]{bics-bsp-report-template}
 \newblock {A review on mathematical strength and analysis of
@@ -735,19 +761,19 @@ Enigma (2020)}.\\
 \begin{figure}[h!]
     \centering
     \includegraphics[scale = .7]{pathway.png}
-    \caption{Pathway of Electrical Flow}
+    \caption{Pathway of Electrical Flow (a figure taken from the paper "A review on mathematical strength and analysis of Enigma"}
     \label{fig:path}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[scale = .7]{dh-graph.png}
-    \caption{Diffie-Hellman Key Exchange}
+    \caption{Diffie-Hellman Key Exchange (a figure taken from an article from Wikiwand)}
     \label{fig:dh}
 \end{figure}
 \begin{figure}[h!]
     \centering
-    \includegraphics[scale = 0.9]{interface.png}
-    \caption{Interface}
+    \includegraphics[scale = 0.8]{interface.png}
+    \caption{Interface of the Enigma simulator}
     \label{fig:infac}
 \end{figure}
 % that's all folks
