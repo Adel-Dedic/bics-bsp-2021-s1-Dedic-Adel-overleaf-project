@@ -300,12 +300,12 @@ This  document  is  the  final  report  of  the  Bachelor Semester   Project   o
 % no \IEEEPARstart
 An encryption system that was invented during the most frightful years for somebody to endure has took many by surprise by how difficult it is to break, considered impossible to crack during it's time, with such a sophisticated machinery that little of few people knew how it works even less so how to build one of their own.\\
 One of the first Enigma patent was filed in 1918 by co-founders of a German firm, Scherbius and Ritter, for it's sole purpose being an option for communication for companies and governments that is safe and well protected against outside intervention. During it's time, no body knew how important of an object such as Enigma would be crucial for the outcome of World War II.\\
-The main objective of the Bachelor Semester Project will be to create a program that should simulate the intentions of the original Enigma machine, that being able to encrypt and decrypt messages simultaneously in one piece of software.
+The main scientific objective of the Bachelor Semester Project is to analyse the strength of Enigma and conclude if the device could be considered as an alternative to safe communication. Different aspects of the machine are examined to further highlight the strengths and weaknesses of the machine.\\
+The main technical objective of the BSP will be to create a program that should simulate the intentions of the original Enigma machine, that being able to encrypt and decrypt messages simultaneously in one piece of software.
 Other prominent features like how the encryption part behaves where every character is encrypted dynamically but also the possibility of configuring the rotors are all present. The program is equipped with features that eases the usability like being able to export and import keys that contain only the crucial information for being processed and thus making the program imminent for being able to read the contents of the key file.\\
-The program also promotes testing messages by providing a technique that allows the user to easily transfer one output message to the input section for further examination purposes while smartly keeping other settings intact.\\
 
 
-\section{Project description ($\pm$ 10\% of total words) }
+\section{Project description}
 \subsection{Domains}
 \subsubsection{Scientific }
 In the scientific part of this project will cover articles which are related to security in general and the diverse types of encryption. The different types of cryptography are relevant to the project by being a solution of some sort to one of the main issues that Enigma has.\\
@@ -314,7 +314,6 @@ Furthermore, we will analyse how the mathematicians had broken the Enigma by usi
 
 \subsubsection{Technical}
 In the technical part of this project a program is produced that simulates the Enigma machine. A GUI for the program is developed to compliment the original piece (e.g.: visual rotor settings). The main domain used to produce the technical was a programming language called Python. One of the main reasons why Python was used was solely based upon the fact that this programming language promotes readability and it is well suited for small and large scale projects like this.\\
-Additionally, Python was the best option to assure user-friendly navigation through the code thanks to it's significant interface.\\
 
 \subsection{Targeted Deliverables}
 \label{sec-deliverables}
@@ -349,13 +348,13 @@ Taken in consideration that not all programming languages share same structure o
 The purpose of the deliverable is to research and formalize an answer to the following question: \emph{How secure is Enigma ?}\\
 Therefore, the deliverable shall cover:
 \begin{itemize}
-    \item{[5.3.1.]} Describing what Enigma is
-    \item{[5.3.2.]} Analysing the value of combinations
-    \item{[5.3.3.]} Defining the word 'encryption' and how it works in the case of Enigma
-    \item{[5.3.4.]} Defining what a breaking point in the context means
-    \item{[5.3.5.]} Explaining Breaking Point N°1: Key Exchange
-    \item{[5.3.6.]} Explaining Breaking Point N°2: Fundamental encryption problem which refuses to let a letter to be encoded into itself during the encryption process
-    \item{[5.3.7.]} Summarizing the relation between the breaking points and the security of the Enigma
+    \item{[4.3.1.]} Describing what Enigma is
+    \item{[4.3.2.]} Analysing the value of combinations
+    \item{[4.3.3.]} Defining the word 'encryption' and how it works in the case of Enigma
+    \item{[4.3.4.]} Defining what a breaking point in the context means
+    \item{[4.3.5.]} Explaining Breaking Point N°1: Key Exchange
+    \item{[4.3.6.]} Explaining Breaking Point N°2: Fundamental encryption problem which refuses to let a letter to be encoded into itself during the encryption process
+    \item{[4.3.7.]} Summarizing the relation between the breaking points and the security of the Enigma
 \end{itemize}
 
 \subsection{Design}
@@ -404,7 +403,7 @@ If somebody would try to go over every possible combination and managed to keep 
 'Single-Key' cryptography (also called 'symmetric encryption') in fact provided insecurities on the level where if the two parties failed exchanging properly the key it increased the chance for a third party to gain acquisition of the key.\\
 Thereby, another methods have been introduced, specifically a two-key system which was the famous 'public-key' cryptography (also called 'asymmetric encryption').\\
 It was accompanied with a private and a public key, based on what encryption algorithms was used the uses of these keys depended on it. i.e.: 'Rivest-Shamir-Adleman' (RSA) used the private key for decryption of information where as 'Digital Signature Algorithm' (DSA) used it for authentication purposes.\\
-Another method of securely exchanging keys is the famous 'Diffie-Hellman' (DH) method, even though this method was one of the earliest to come to light it's still broadly used on multiple platforms. The method consists of generating am unique public and an unique private key for both parties resulting a combination of one's private key and other's public key gives out the secret information.\\
+Another method of securely exchanging keys is the famous 'Diffie-Hellman' (DH) method, even though this method was one of the earliest to come to light it's still broadly used on multiple platforms. The method consists of generating a unique public and a unique private key for both parties resulting a combination of one's private key and other's public key gives out the secret information.\\
 For a clearer picture, an example from an article is shown as Figure \ref{fig:dh}.\\
 Enigma on the other hand didn't follow any of these 'modern' methods of key exchange and would simply share list of day-to-day configurations of the Enigma to trusted parties which would not be changed for a whole month. These configurations can be considered as a 'key' in modern day cryptography.
 To today's standards, this in fact is very dangerous way of distributing information because if it would land on the wrong hands the leak of information wouldn't be resolved soon enough to prevent drawbacks. (In the case of Enigma, war obstructions)\\ 
@@ -460,8 +459,6 @@ In this case the letter 'I' is matching, thereby also not the right encoding.\\
 In the last case none of the letters match up, which means that the encoding works in this case. Take in consideration that the word 'Windy' isn't guaranteed that it is in the secret message itself but it gives us a bigger picture understanding where to start looking for breaking messages.\\
 
 In conclusion, the elementary solution is to provide a possibility for the machine to be able to encrypt letters into themselves. This in fact would eliminate the current method of breaking the code and thereby increase the security of the device immensely.\\
-
-*A similar example has been brought to attention in the following article from Brilliant "Enigma Machine".
 
 \subsubsection{Relation between breaking points \& security} Considering the fact that all of the breaking points have been covered by now, to complete the scientific report we shall answer the question that has been asked at the beginning \emph{"How secure is Enigma ?"}\\
 
@@ -523,8 +520,8 @@ This is a sneak peek of how the 'step' that is necessary for encryption is permu
         c_num += enigma.rotor1
         c_num -= enigma.rotor2
         c_num += enigma.rotor3*2
-        c_num %=window_width
-\end{verbatim}
+        c_num %= window_width
+\end{verbatim} 
 The permutation is a process of 4 different mathematical operations:\\
 \begin{itemize}
     \item Firstly adding the rotor 1 to the step;\\
@@ -731,7 +728,8 @@ Auto- or self-plagiarism, that is the reproduction of (portions of a) text previ
 \bibitem[2]{bics-bsp-report-template}
 \newblock {Enigma Machine | Brilliant}.\\
 \newblock {Karleigh Moore, Ethan W, Ejun Dean, and 1 other contributed}.\\
-\newblock {https://brilliant.org/wiki/enigma-machine}
+\newblock {https://brilliant.org/wiki/enigma-machine}\\
+\newblck {The example given in 4.3.6 has a resemblance to one of the examples given in this article}
 
 \bibitem[3]{bics-bsp-report-template}
 \newblock {The Complete History of the Enigma Machine (2021)}.\\
